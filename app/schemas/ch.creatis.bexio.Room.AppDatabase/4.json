@@ -1,0 +1,201 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 4,
+    "identityHash": "f4f3fc18d8c6992a257c2d73b423cdef",
+    "entities": [
+      {
+        "tableName": "contacts",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idRoom` INTEGER PRIMARY KEY AUTOINCREMENT, `idBexio` TEXT, `name_un` TEXT, `name_deux` TEXT, `address` TEXT, `postcode` TEXT, `city` TEXT, `mail` TEXT, `phone_fixed` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idRoom",
+            "columnName": "idRoom",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idBexio",
+            "columnName": "idBexio",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name_un",
+            "columnName": "name_un",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name_deux",
+            "columnName": "name_deux",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "postcode",
+            "columnName": "postcode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "city",
+            "columnName": "city",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mail",
+            "columnName": "mail",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "phone_fixed",
+            "columnName": "phone_fixed",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idRoom"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "projets",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idRoom` INTEGER PRIMARY KEY AUTOINCREMENT, `idBexio` TEXT, `nr` TEXT, `name` TEXT, `start_date` TEXT, `start_end` TEXT, `comment` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idRoom",
+            "columnName": "idRoom",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idBexio",
+            "columnName": "idBexio",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nr",
+            "columnName": "nr",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "start_date",
+            "columnName": "start_date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "start_end",
+            "columnName": "start_end",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "comment",
+            "columnName": "comment",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idRoom"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "temps",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idRoom` INTEGER PRIMARY KEY AUTOINCREMENT, `idBexio` TEXT, `text` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idRoom",
+            "columnName": "idRoom",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idBexio",
+            "columnName": "idBexio",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "text",
+            "columnName": "text",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idRoom"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "taches",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idRoom` INTEGER PRIMARY KEY AUTOINCREMENT, `idBexio` TEXT, `text` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idRoom",
+            "columnName": "idRoom",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idBexio",
+            "columnName": "idBexio",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "text",
+            "columnName": "text",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idRoom"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"f4f3fc18d8c6992a257c2d73b423cdef\")"
+    ]
+  }
+}
